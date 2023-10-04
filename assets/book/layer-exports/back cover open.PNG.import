@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf1f1qymdbo8q"
-path="res://.godot/imported/Copy of book.PNG-3298eb1aa23d94dd19d0948166251e5a.ctex"
+uid="uid://hoj0pjeixaui"
+path="res://.godot/imported/back cover open.PNG-3965a1d6b0644d02a5fe66969beb5c93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/book/layer-exports/Copy of book.PNG"
-dest_files=["res://.godot/imported/Copy of book.PNG-3298eb1aa23d94dd19d0948166251e5a.ctex"]
+source_file="res://assets/book/layer-exports/back cover open.PNG"
+dest_files=["res://.godot/imported/back cover open.PNG-3965a1d6b0644d02a5fe66969beb5c93.ctex"]
 
 [params]
 

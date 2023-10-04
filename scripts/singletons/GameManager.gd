@@ -9,8 +9,10 @@ func _ready():
 	
 func _on_change_scene(nextScene:String):
 	match nextScene:
-		"scene_1":
+		"scene_0":
 			pass
+		"scene_1":
+			get_tree().change_scene_to_file("res://scenes/book_scene.tscn")
 		"scene_2":
 			get_tree().change_scene_to_file("res://scenes/book_scene_2.tscn")
 		"scene_3":

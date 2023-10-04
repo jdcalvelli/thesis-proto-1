@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccj5tgccmm6oa"]
+
+[ext_resource type="Texture2D" uid="uid://npiu6r2adk4a" path="res://assets/book/layer-exports/front cover.PNG" id="1_ryhd7"]
+[ext_resource type="Texture2D" uid="uid://dt0jog5idh7kk" path="res://assets/book/layer-exports/front cover open.PNG" id="2_2kpco"]
+[ext_resource type="Script" path="res://scripts/scrapbook.gd" id="3_8vier"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a4s7c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ryhd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2kpco")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tc2qn"]
+size = Vector2(64, 436)
+
+[node name="ScrapbookCover" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_a4s7c")
+script = ExtResource("3_8vier")
+
+[node name="PageEdge" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageEdge"]
+position = Vector2(394, 2.08165e-12)
+shape = SubResource("RectangleShape2D_tc2qn")
+
+[node name="BookCenter" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BookCenter"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+shape = SubResource("RectangleShape2D_tc2qn")
+
+[node name="BookEnd" type="Area2D" parent="."]
+position = Vector2(-316, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BookEnd"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+shape = SubResource("RectangleShape2D_tc2qn")

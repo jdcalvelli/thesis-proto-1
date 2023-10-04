@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-# THIS SHOULD ALL BE REFACTORED IM SO SORRY ME
+# THIS SHOULD ALL BE REFACTORED IM SO SORRY FUTURE ME
 
 @export var nextScene:String
 
@@ -25,13 +25,20 @@ func _on_page_edge_clicked(viewport:Node, event:InputEvent, shape_idx:int):
 
 func _on_edge_to_center(area:Area2D):
 	print("BOOK CENTER ENTERED")
-	frame = 1
+	if nextScene == "back_cover":
+		frame = 2
+	else:
+		frame = 1
+	Messenger.togglePhotos.emit(false)
 
 func _on_edge_to_end(area:Area2D):
 	print("BOOK END ENTERED")
-	frame = 0
+	if nextScene == "back_cover":
+		frame = 3
+	else:
+		frame = 0
+		Messenger.changeScene.emit(nextScene)
+		Messenger.togglePhotos.emit(true)
+	
 	isPageEdgeHeld = false
-	# im hard coding this bc prototype lol
-	$PageEdge/CollisionShape2D.position.x = 352
-	Messenger.changeScene.emit(nextScene)
 	
