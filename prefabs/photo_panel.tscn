@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cynxhewqxdkw8"]
+
+[ext_resource type="Texture2D" uid="uid://dhg54bxj5wov6" path="res://icon.svg" id="1_xaheo"]
+[ext_resource type="Script" path="res://scripts/photo_panel.gd" id="2_r23t5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7586u"]
+size = Vector2(137, 138)
+
+[node name="photo_panel" type="Sprite2D"]
+texture = ExtResource("1_xaheo")
+script = ExtResource("2_r23t5")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_7586u")
