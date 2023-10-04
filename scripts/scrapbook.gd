@@ -2,6 +2,8 @@ extends AnimatedSprite2D
 
 # THIS SHOULD ALL BE REFACTORED IM SO SORRY ME
 
+@export var nextScene:String
+
 var isPageEdgeHeld:bool
 
 func _ready():
@@ -31,4 +33,5 @@ func _on_edge_to_end(area:Area2D):
 	isPageEdgeHeld = false
 	# im hard coding this bc prototype lol
 	$PageEdge/CollisionShape2D.position.x = 352
+	Messenger.changeScene.emit(nextScene)
 	
