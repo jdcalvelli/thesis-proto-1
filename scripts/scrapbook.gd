@@ -35,6 +35,7 @@ func _on_edge_to_end(area:Area2D):
 	print("BOOK END ENTERED")
 	if nextScene == "back_cover":
 		frame = 3
+		Messenger.showDaughterBubble.emit()
 	else:
 		frame = 0
 		Messenger.changeScene.emit(nextScene)

@@ -12,9 +12,9 @@ func _on_change_scene(nextScene:String):
 		"scene_0":
 			pass
 		"scene_1":
-			get_tree().change_scene_to_file("res://scenes/book_scene.tscn")
+			get_tree().change_scene_to_file("res://scenes/first_pages.tscn")
 		"scene_2":
-			get_tree().change_scene_to_file("res://scenes/book_scene_2.tscn")
+			get_tree().change_scene_to_file("res://scenes/final_pages.tscn")
 		"scene_3":
 			print("NEXT SCENE")
 

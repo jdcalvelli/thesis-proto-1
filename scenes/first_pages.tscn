@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpqgvnwcc7cel"]
+
+[ext_resource type="Script" path="res://scripts/book_scene.gd" id="1_tmrra"]
+[ext_resource type="Texture2D" uid="uid://c7s2lgbgeok5p" path="res://assets/book/Background.PNG" id="2_x5x0v"]
+[ext_resource type="PackedScene" uid="uid://bhspx5e4quh61" path="res://prefabs/scrapbook.tscn" id="3_w7b63"]
+[ext_resource type="PackedScene" uid="uid://cynxhewqxdkw8" path="res://prefabs/photo_panel.tscn" id="4_o7bdq"]
+
+[node name="first_pages" type="Node2D"]
+script = ExtResource("1_tmrra")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_x5x0v")
+
+[node name="Scrapbook" parent="." instance=ExtResource("3_w7b63")]
+nextScene = "scene_2"
+
+[node name="photo_panel" parent="." instance=ExtResource("4_o7bdq")]
+visible = false
+position = Vector2(-158, -3)
+DialogueOption = "photo_1"
+
+[node name="photo_panel2" parent="." instance=ExtResource("4_o7bdq")]
+visible = false
+position = Vector2(177, -97)
+DialogueOption = "photo_2"
+
+[node name="photo_panel3" parent="." instance=ExtResource("4_o7bdq")]
+visible = false
+position = Vector2(181, 88)
+DialogueOption = "photo_3"

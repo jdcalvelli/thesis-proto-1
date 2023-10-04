@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://btfo663hlkjk0"]
+
+[ext_resource type="Script" path="res://scripts/book_scene.gd" id="1_bxonj"]
+[ext_resource type="Texture2D" uid="uid://c7s2lgbgeok5p" path="res://assets/book/Background.PNG" id="2_ikqga"]
+[ext_resource type="PackedScene" uid="uid://bhspx5e4quh61" path="res://prefabs/scrapbook.tscn" id="3_ucp8y"]
+[ext_resource type="PackedScene" uid="uid://cynxhewqxdkw8" path="res://prefabs/photo_panel.tscn" id="4_aylx5"]
+[ext_resource type="Texture2D" uid="uid://bkfsogiaahmaj" path="res://assets/book/layer-exports/daughter speech bubble.PNG" id="5_nsvpb"]
+
+[node name="final_pages" type="Node2D"]
+script = ExtResource("1_bxonj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_ikqga")
+
+[node name="Scrapbook" parent="." instance=ExtResource("3_ucp8y")]
+nextScene = "back_cover"
+
+[node name="photo_panel" parent="." instance=ExtResource("4_aylx5")]
+position = Vector2(-159, -103)
+DialogueOption = "photo_4"
+
+[node name="photo_panel2" parent="." instance=ExtResource("4_aylx5")]
+position = Vector2(-159, 86)
+DialogueOption = "photo_5"
+
+[node name="photo_panel3" parent="." instance=ExtResource("4_aylx5")]
+position = Vector2(176, -6)
+DialogueOption = "photo_6"
+
+[node name="Daughter Speech Bubble" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_nsvpb")
