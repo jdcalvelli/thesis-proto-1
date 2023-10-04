@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccj5tgccmm6oa"]
+[gd_scene load_steps=7 format=3 uid="uid://ccj5tgccmm6oa"]
 
 [ext_resource type="Texture2D" uid="uid://npiu6r2adk4a" path="res://assets/book/layer-exports/front cover.PNG" id="1_ryhd7"]
 [ext_resource type="Texture2D" uid="uid://dt0jog5idh7kk" path="res://assets/book/layer-exports/front cover open.PNG" id="2_2kpco"]
 [ext_resource type="Script" path="res://scripts/scrapbook.gd" id="3_8vier"]
+[ext_resource type="AudioStream" uid="uid://478urjhkeg4d" path="res://audio/63318__flag2__page-turn-please-turn-over-pto-paper_turn_over.wav" id="4_jge8l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a4s7c"]
 animations = [{
@@ -43,3 +44,6 @@ position = Vector2(-316, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BookEnd"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 shape = SubResource("RectangleShape2D_tc2qn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jge8l")

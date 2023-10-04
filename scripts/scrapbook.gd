@@ -25,6 +25,7 @@ func _on_page_edge_clicked(viewport:Node, event:InputEvent, shape_idx:int):
 
 func _on_edge_to_center(area:Area2D):
 	print("BOOK CENTER ENTERED")
+	$AudioStreamPlayer.play()
 	if nextScene == "back_cover":
 		frame = 2
 	else:

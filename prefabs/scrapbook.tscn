@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhspx5e4quh61"]
+[gd_scene load_steps=9 format=3 uid="uid://bhspx5e4quh61"]
 
 [ext_resource type="Texture2D" uid="uid://b40oh78t4jyhn" path="res://assets/book/layer-exports/open to pages.PNG" id="1_ob6ki"]
 [ext_resource type="Texture2D" uid="uid://dj3vjbp121n58" path="res://assets/book/layer-exports/flipped page.PNG" id="2_o0jt2"]
 [ext_resource type="Texture2D" uid="uid://hoj0pjeixaui" path="res://assets/book/layer-exports/back cover open.PNG" id="3_0vjei"]
 [ext_resource type="Script" path="res://scripts/scrapbook.gd" id="3_xjev3"]
 [ext_resource type="Texture2D" uid="uid://2tqyocam0gw3" path="res://assets/book/layer-exports/back cover.PNG" id="4_m64te"]
+[ext_resource type="AudioStream" uid="uid://478urjhkeg4d" path="res://audio/63318__flag2__page-turn-please-turn-over-pto-paper_turn_over.wav" id="6_pg3pt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ojva1"]
 animations = [{
@@ -51,3 +52,6 @@ position = Vector2(-316, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BookEnd"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 shape = SubResource("RectangleShape2D_tc2qn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_pg3pt")

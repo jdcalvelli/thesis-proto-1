@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://btfo663hlkjk0"]
+[gd_scene load_steps=9 format=3 uid="uid://btfo663hlkjk0"]
 
 [ext_resource type="Script" path="res://scripts/book_scene.gd" id="1_bxonj"]
 [ext_resource type="Texture2D" uid="uid://c7s2lgbgeok5p" path="res://assets/book/Background.PNG" id="2_ikqga"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bnkdr1jhnxv5l" path="res://assets/book/layer-exports/college grad pic.PNG" id="4_33pwo"]
 [ext_resource type="Texture2D" uid="uid://bkfsogiaahmaj" path="res://assets/book/layer-exports/daughter speech bubble.PNG" id="5_nsvpb"]
 [ext_resource type="Script" path="res://scripts/photo_panel.gd" id="5_sg2ge"]
+[ext_resource type="AudioStream" uid="uid://1h30ovkli7cd" path="res://audio/414439__inspectorj__light-pulley-switch-on-b.wav" id="7_0q5ib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7586u"]
 size = Vector2(182.5, 161)
@@ -37,3 +38,25 @@ shape = SubResource("RectangleShape2D_7586u")
 [node name="Daughter Speech Bubble" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("5_nsvpb")
+
+[node name="BlackScreen" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 0)
+texture = ExtResource("2_ikqga")
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "do over
+a prototype by jd calvelli"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_0q5ib")

@@ -9,6 +9,8 @@ func _ready():
 	
 func _on_change_scene(nextScene:String):
 	match nextScene:
+		"restart":
+			get_tree().change_scene_to_file("res://scenes/front_cover_scene.tscn")
 		"scene_1":
 			get_tree().change_scene_to_file("res://scenes/first_pages.tscn")
 		"scene_2":
