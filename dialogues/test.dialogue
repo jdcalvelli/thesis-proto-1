@@ -1,41 +1,47 @@
 ~ photo_1
 
-Photo 1 Section 1.
-Photo 1 Section 2.
+Photo 1.
 
 => END
 
 ~ photo_2
 
-Photo 2 Section 1.
-Photo 2 Section 2.
+Photo 2.
 
 => END
 
 ~ photo_3
 
-Photo 3 Section 1.
-Photo 3 Section 2.
+Photo 3.
 
 => END
 
 ~ photo_4
 
-Photo 4 Section 1.
-Photo 4 Section 2.
+Photo 4.
 
 => END
 
 ~ photo_5
 
-Photo 5 Section 1.
-Photo 5 Section 2.
+Photo 5.
 
 => END
 
 ~ photo_6
 
-Photo 6 Section 1.
-Photo 6 Section 2.
+Photo 6.
+
+=> END
+
+~ photo_7
+
+Photo 7.
+
+=> END
+
+~ photo_8
+
+Photo 8.
 
 => END

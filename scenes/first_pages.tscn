@@ -1,12 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpqgvnwcc7cel"]
+[gd_scene load_steps=9 format=3 uid="uid://bpqgvnwcc7cel"]
 
 [ext_resource type="Script" path="res://scripts/book_scene.gd" id="1_tmrra"]
 [ext_resource type="Texture2D" uid="uid://c7s2lgbgeok5p" path="res://assets/book/Background.PNG" id="2_x5x0v"]
 [ext_resource type="PackedScene" uid="uid://bhspx5e4quh61" path="res://prefabs/scrapbook.tscn" id="3_w7b63"]
-[ext_resource type="PackedScene" uid="uid://cynxhewqxdkw8" path="res://prefabs/photo_panel.tscn" id="4_o7bdq"]
+[ext_resource type="Texture2D" uid="uid://d2af0ow2veft0" path="res://assets/book/layer-exports/baby pic.PNG" id="5_1uxhn"]
+[ext_resource type="Script" path="res://scripts/photo_panel.gd" id="5_qrj83"]
+[ext_resource type="Texture2D" uid="uid://dvemjgokbf31t" path="res://assets/book/layer-exports/stroller w mom pic.PNG" id="6_5gvvp"]
+[ext_resource type="Texture2D" uid="uid://dcq4nyoy37ar5" path="res://assets/book/layer-exports/blocks w dad pic.PNG" id="7_llrq2"]
 
-[node name="first_pages" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7586u"]
+size = Vector2(182.5, 161)
+
+[node name="first_pages" type="Node2D" node_paths=PackedStringArray("photoArray")]
 script = ExtResource("1_tmrra")
+photoArray = [NodePath("photo_panel"), NodePath("photo_panel2"), NodePath("photo_panel3")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -16,17 +23,38 @@ texture = ExtResource("2_x5x0v")
 [node name="Scrapbook" parent="." instance=ExtResource("3_w7b63")]
 nextScene = "scene_2"
 
-[node name="photo_panel" parent="." instance=ExtResource("4_o7bdq")]
-visible = false
-position = Vector2(-158, -3)
+[node name="photo_panel" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("5_1uxhn")
+script = ExtResource("5_qrj83")
 DialogueOption = "photo_1"
 
-[node name="photo_panel2" parent="." instance=ExtResource("4_o7bdq")]
-visible = false
-position = Vector2(177, -97)
+[node name="Area2D" type="Area2D" parent="photo_panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="photo_panel/Area2D"]
+position = Vector2(-142, -9)
+shape = SubResource("RectangleShape2D_7586u")
+
+[node name="photo_panel2" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("6_5gvvp")
+script = ExtResource("5_qrj83")
 DialogueOption = "photo_2"
 
-[node name="photo_panel3" parent="." instance=ExtResource("4_o7bdq")]
-visible = false
-position = Vector2(181, 88)
+[node name="Area2D" type="Area2D" parent="photo_panel2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="photo_panel2/Area2D"]
+position = Vector2(164.75, -97.5)
+shape = SubResource("RectangleShape2D_7586u")
+
+[node name="photo_panel3" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("7_llrq2")
+script = ExtResource("5_qrj83")
 DialogueOption = "photo_3"
+
+[node name="Area2D" type="Area2D" parent="photo_panel3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="photo_panel3/Area2D"]
+position = Vector2(169, 83)
+shape = SubResource("RectangleShape2D_7586u")

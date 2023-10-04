@@ -9,14 +9,12 @@ func _ready():
 	
 func _on_change_scene(nextScene:String):
 	match nextScene:
-		"scene_0":
-			pass
 		"scene_1":
 			get_tree().change_scene_to_file("res://scenes/first_pages.tscn")
 		"scene_2":
-			get_tree().change_scene_to_file("res://scenes/final_pages.tscn")
+			get_tree().change_scene_to_file("res://scenes/second_pages.tscn")
 		"scene_3":
-			print("NEXT SCENE")
+			get_tree().change_scene_to_file("res://scenes/final_pages.tscn")
 
 func _on_photo_clicked(emitter:Node):
 	print(emitter.DialogueOption)

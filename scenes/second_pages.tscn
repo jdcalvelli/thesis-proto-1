@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://cjmnr6aocn1w4"]
+
+[ext_resource type="Script" path="res://scripts/book_scene.gd" id="1_m2mhl"]
+[ext_resource type="Texture2D" uid="uid://c7s2lgbgeok5p" path="res://assets/book/Background.PNG" id="2_btww8"]
+[ext_resource type="PackedScene" uid="uid://bhspx5e4quh61" path="res://prefabs/scrapbook.tscn" id="3_udpel"]
+[ext_resource type="Texture2D" uid="uid://ddsyetshyoh4u" path="res://assets/book/layer-exports/high school grad pic.PNG" id="4_go5g6"]
+[ext_resource type="Script" path="res://scripts/photo_panel.gd" id="5_dhv41"]
+[ext_resource type="Texture2D" uid="uid://cujcxrpxce2vc" path="res://assets/book/layer-exports/parents fighting pic.PNG" id="6_g8syi"]
+[ext_resource type="Texture2D" uid="uid://ot84g6t0u10g" path="res://assets/book/layer-exports/fishing with mom pic.PNG" id="7_28yll"]
+[ext_resource type="Texture2D" uid="uid://b0cslqgba2622" path="res://assets/book/layer-exports/crossword w dad pic.PNG" id="8_qudsv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7586u"]
+size = Vector2(182.5, 161)
+
+[node name="second_pages" type="Node2D" node_paths=PackedStringArray("photoArray")]
+script = ExtResource("1_m2mhl")
+photoArray = [NodePath("photo_panel"), NodePath("photo_panel2"), NodePath("photo_panel3"), NodePath("photo_panel4")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_btww8")
+
+[node name="Scrapbook" parent="." instance=ExtResource("3_udpel")]
+nextScene = "scene_3"
+
+[node name="photo_panel" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("4_go5g6")
+script = ExtResource("5_dhv41")
+DialogueOption = "photo_4"
+
+[node name="Area2D" type="Area2D" parent="photo_panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="photo_panel/Area2D"]
+position = Vector2(-146, -92)
+shape = SubResource("RectangleShape2D_7586u")
+
+[node name="photo_panel2" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("6_g8syi")
+script = ExtResource("5_dhv41")
+DialogueOption = "photo_5"
+
+[node name="Area2D" type="Area2D" parent="photo_panel2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="photo_panel2/Area2D"]
+position = Vector2(-149, 102)
+shape = SubResource("RectangleShape2D_7586u")
+
+[node name="photo_panel3" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("7_28yll")
+script = ExtResource("5_dhv41")
+DialogueOption = "photo_6"
+
+[node name="Area2D" type="Area2D" parent="photo_panel3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="photo_panel3/Area2D"]
+position = Vector2(152, -95)
+shape = SubResource("RectangleShape2D_7586u")
+
+[node name="photo_panel4" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("8_qudsv")
+script = ExtResource("5_dhv41")
+DialogueOption = "photo_7"
+
+[node name="Area2D" type="Area2D" parent="photo_panel4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="photo_panel4/Area2D"]
+position = Vector2(156, 105)
+shape = SubResource("RectangleShape2D_7586u")
