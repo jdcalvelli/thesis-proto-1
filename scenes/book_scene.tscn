@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpqgvnwcc7cel"]
+
+[ext_resource type="Texture2D" uid="uid://c7s2lgbgeok5p" path="res://assets/book/layer-exports/Background.PNG" id="1_8wuod"]
+[ext_resource type="PackedScene" uid="uid://bhspx5e4quh61" path="res://prefabs/scrapbook.tscn" id="2_eaor0"]
+
+[node name="book_scene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_8wuod")
+
+[node name="Scrapbook" parent="." instance=ExtResource("2_eaor0")]
